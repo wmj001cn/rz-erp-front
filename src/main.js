@@ -38,6 +38,12 @@ window.mbaseUrl = "https://so.cross.echosite.cn";
 router.beforeEach((from, to, next)=>{
  
   var ok = false;
+
+  if (to.path == '/test') {
+    next();
+    return;
+  }  
+
   var userInfo = localStorage.getItem('userInfo');
   if (userInfo) {
    next();
